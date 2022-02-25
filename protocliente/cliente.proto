@@ -25,7 +25,7 @@ message GeneralResponse {
     string Mensaje = 1;
 }
 
-message ClienteReponse {
+message ListaPedidosReponse {
     repeated PedidoReqRes Pedidos = 1;
 }
 
@@ -35,8 +35,19 @@ message PedidoReqRes {
 }
 
 service ClienteService {
-    rpc GetPedidos(Vacio) returns (ClienteReponse);
     rpc crearPedido(ClienteRequest) returns (GeneralResponse);
+    rpc GetPedidos(Vacio) returns (ListaPedidosReponse);
     rpc GetEstadoRestaurant(idRequest) returns (GeneralResponse);
     rpc GetEstadoReparto(idRequest) returns (GeneralResponse);
+
+    rpc AceptarPedido(PedidoReqRes) returns (GeneralResponse);
+    rpc GetPedidosRest(Vacio) returns (ListaPedidosReponse);
+    rpc EnviarEncargo(idRequest) returns (GeneralResponse);
+    rpc SendEstadoRestaurant(idRequest) returns (GeneralResponse);
+
+    rpc crearReparto(PedidoReqRes) returns (GeneralResponse);
+    rpc GetPedidosReparto(Vacio) returns (ListaPedidosReponse);
+    rpc TerminarEncargo(idRequest) returns (GeneralResponse);
+    rpc SendEstadoReparto(idRequest) returns (GeneralResponse);
+
 }
