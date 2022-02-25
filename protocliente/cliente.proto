@@ -5,37 +5,37 @@ package grpc;
 option go_package = "github.com/Angcelo/protossa/protocliente";
 
 message idRequest {
-    int32 id = 1;
+    int32 Id = 1;
 } 
 
-message vacio {
+message Vacio {
 
 }
 
 message ClienteRequest {
-    repeated Pedido pedidos = 1;
+    repeated ProducoRequest Producto = 1;
 }
 
-message Pedido {
-    string nombre = 1;
-    int32 cantidad = 2;
+message ProducoRequest {
+    string Nombre = 1;
+    int32 Cantidad = 2;
 }
 
 message GeneralResponse {
-    string mensaje = 1;
+    string Mensaje = 1;
 }
 
 message ClienteReponse {
-    repeated PedidoReqRes pedidos = 1;
+    repeated PedidoReqRes Pedidos = 1;
 }
 
 message PedidoReqRes {
     int32 id = 1;
-    repeated Pedido pedidos = 2;
+    repeated ProducoRequest Producto = 2;
 }
 
 service ClienteService {
-    rpc GetPedidos(vacio) returns (ClienteReponse);
+    rpc GetPedidos(Vacio) returns (ClienteReponse);
     rpc crearPedido(ClienteRequest) returns (GeneralResponse);
     rpc GetEstadoRestaurant(idRequest) returns (GeneralResponse);
     rpc GetEstadoReparto(idRequest) returns (GeneralResponse);
