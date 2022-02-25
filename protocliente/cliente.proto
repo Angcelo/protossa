@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package grpc;
 
-option go_package = "github.com/angcelo/protossa/protocliente";
+option go_package = "github.com/Angcelo/protossa/protocliente";
 
 message idRequest {
     int32 id = 1;

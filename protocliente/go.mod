@@ -1,4 +1,4 @@
-module github.com/angcelo/protossa/protocliente
+module github.com/Angcelo/protossa/protocliente
 
 go 1.17
 
